@@ -443,7 +443,7 @@ CDisplay* CDisplay::createDisplay(const CConf& conf, CUMP* ump, CModem* modem)
         if (port == "modem")
             serial = new CModemSerialPort(modem);
         else
-            serial = new CSerialController(port, SERIAL_9600);
+            serial = new CSerialController(port, SERIAL_38400);
 
         display = new CTFTSerial(conf.getCallsign(), dmrid, serial, brightness);
     } else if (type == "Nextion") {
